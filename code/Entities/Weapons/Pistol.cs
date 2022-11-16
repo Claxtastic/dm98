@@ -6,7 +6,7 @@ partial class Pistol : DeathmatchWeapon
 	public static readonly Model WorldModel = Model.Load( "weapons/rust_pistol/rust_pistol.vmdl" );
 	public override string ViewModelPath => "weapons/rust_pistol/v_rust_pistol.vmdl";
 
-	public override float PrimaryRate => 12.0f;
+	public override float PrimaryRate => 14.0f;
 	public override float SecondaryRate => 4.5f;
 	public override float ReloadTime => 3.0f;
 
@@ -17,7 +17,7 @@ partial class Pistol : DeathmatchWeapon
 		base.Spawn();
 
 		Model = WorldModel;
-		AmmoClip = 12;
+		AmmoClip = 18;
 	}
 
 	public override bool CanPrimaryAttack()

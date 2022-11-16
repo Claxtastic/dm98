@@ -1,7 +1,7 @@
 {
   "Title": "DM98",
   "Type": "game",
-  "Org": "facepunch",
+  "Org": "local",
   "Ident": "dm98",
   "Schema": 1,
   "HasAssets": true,

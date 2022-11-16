@@ -22,14 +22,7 @@
 	{
 		SetModel( "models/citizen/citizen.vmdl" );
 
-		Controller = new WalkController
-		{
-			WalkSpeed = 270,
-			SprintSpeed = 100,
-			DefaultSpeed = 270,
-			AirAcceleration = 10,
-
-		};
+		Controller = new DeathmatchController();
 
 		Animator = new StandardPlayerAnimator();
 
@@ -128,6 +121,10 @@
 			return;
 		};
 
+		// var mytrace = Trace.Ray( CameraMode.Position, CameraMode.Position + 3000.0f );
+		// mytrace = mytrace.WorldOnly();
+		// var result = mytrace.Run();
+
 		base.BuildInput( input );
 	}
 
@@ -151,6 +148,16 @@
 			return;
 
 		TickPlayerUse();
+
+		if ( Input.Pressed( InputButton.Duck ) )
+		{
+			var originalVel = Velocity;
+			for ( int i = 0; i < 10; i++ ) 
+			{
+				Velocity += Vector3.Right * 1000.0f;
+			}
+			Velocity = originalVel;
+		}
 
 		if ( Input.Pressed( InputButton.View ) )
 		{
